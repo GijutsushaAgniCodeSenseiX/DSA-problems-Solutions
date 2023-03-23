@@ -1,4 +1,4 @@
-//sparse element bro lol
+//To check whether a number is sparse element or not 
 class Solution {
 
 public :

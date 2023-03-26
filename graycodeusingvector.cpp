@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
 public:
-    vector<int> (int n) {
+    vector<int> toBinary(int n) {
         vector<int> binary;
         while (n) {
             binary.push_back(n & 1);

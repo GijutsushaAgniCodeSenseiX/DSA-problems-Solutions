@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+unsigned int swapBits(unsigned int n) {
+    unsigned int even_bits = 0, odd_bits = 0;
+    int bit_position = 0;
+    while (n) {
+        // Get the current even and odd bits and store them in separate variables
+        if (bit_position % 2 == 0) {
+            even_bits |= (n & 1) << (bit_position + 1);
+        } else {
+            odd_bits |= (n & 1) << (bit_position - 1);
+        }
+        n >>= 1;  // Right shift the input number to process the next bit
+        bit_position++;  // Increment the bit position counter
+    }
+    // Combine even and odd bits using bitwise OR
+    return (even_bits | odd_bits);
+}
+
+int main() {
+    unsigned int n = 23;
+    cout << "Before swapping: " << n << endl;
+    n = swapBits(n);
+    cout << "After swapping: " << n << endl;
+    return 0;
+}
